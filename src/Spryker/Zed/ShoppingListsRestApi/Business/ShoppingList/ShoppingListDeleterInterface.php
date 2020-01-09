@@ -7,17 +7,15 @@
 
 namespace Spryker\Zed\ShoppingListsRestApi\Business\ShoppingList;
 
-use Generated\Shared\Transfer\RestShoppingListRequestTransfer;
 use Generated\Shared\Transfer\ShoppingListResponseTransfer;
+use Generated\Shared\Transfer\ShoppingListTransfer;
 
 interface ShoppingListDeleterInterface
 {
     /**
-     * @param \Generated\Shared\Transfer\RestShoppingListRequestTransfer $restShoppingListRequestTransfer
+     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
      *
      * @return \Generated\Shared\Transfer\ShoppingListResponseTransfer
      */
-    public function deleteShoppingList(
-        RestShoppingListRequestTransfer $restShoppingListRequestTransfer
-    ): ShoppingListResponseTransfer;
+    public function deleteShoppingList(ShoppingListTransfer $shoppingListTransfer): ShoppingListResponseTransfer;
 }
