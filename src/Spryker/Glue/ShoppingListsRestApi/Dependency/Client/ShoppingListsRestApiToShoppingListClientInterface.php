@@ -7,6 +7,8 @@
 
 namespace Spryker\Glue\ShoppingListsRestApi\Dependency\Client;
 
+use Generated\Shared\Transfer\ShoppingListCollectionTransfer;
+use Generated\Shared\Transfer\ShoppingListCriteriaTransfer;
 use Generated\Shared\Transfer\ShoppingListResponseTransfer;
 use Generated\Shared\Transfer\ShoppingListTransfer;
 
@@ -18,4 +20,11 @@ interface ShoppingListsRestApiToShoppingListClientInterface
      * @return \Generated\Shared\Transfer\ShoppingListResponseTransfer
      */
     public function findShoppingListByUuid(ShoppingListTransfer $shoppingListTransfer): ShoppingListResponseTransfer;
+
+    /**
+     * @param \Generated\Shared\Transfer\ShoppingListCriteriaTransfer $shoppingListCriteriaTransfer
+     *
+     * @return \Generated\Shared\Transfer\ShoppingListCollectionTransfer
+     */
+    public function getShoppingListCollection(ShoppingListCriteriaTransfer $shoppingListCriteriaTransfer): ShoppingListCollectionTransfer;
 }
