@@ -13,12 +13,6 @@ use Generated\Shared\Transfer\RestUserTransfer;
 
 class CustomerMapper implements CustomerMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\RestUserTransfer $restUserTransfer
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerTransfer
-     */
     public function mapRestUserTransferToCustomerTransfer(RestUserTransfer $restUserTransfer, CustomerTransfer $customerTransfer): CustomerTransfer
     {
         $companyUserTransfer = $this->mapRestUserTransferToCompanyUserTransfer(
@@ -30,12 +24,6 @@ class CustomerMapper implements CustomerMapperInterface
             ->setCompanyUserTransfer($companyUserTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\RestUserTransfer $restUserTransfer
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserTransfer
-     */
     protected function mapRestUserTransferToCompanyUserTransfer(
         RestUserTransfer $restUserTransfer,
         CompanyUserTransfer $companyUserTransfer

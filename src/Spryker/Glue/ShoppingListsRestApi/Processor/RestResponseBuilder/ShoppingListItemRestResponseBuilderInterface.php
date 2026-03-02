@@ -20,12 +20,6 @@ interface ShoppingListItemRestResponseBuilderInterface extends RestResponseBuild
      */
     public function createShoppingListItemRestResourcesFromShoppingListTransfer(ShoppingListTransfer $shoppingListTransfer): array;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     * @param string $idShoppingList
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function buildShoppingListItemRestResponse(
         ShoppingListItemTransfer $shoppingListItemTransfer,
         string $idShoppingList

@@ -13,12 +13,6 @@ use Generated\Shared\Transfer\ShoppingListTransfer;
 
 class ShoppingListMapper implements ShoppingListMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     * @param \Generated\Shared\Transfer\RestShoppingListsAttributesTransfer $restShoppingListsAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestShoppingListsAttributesTransfer
-     */
     public function mapShoppingListTransferToRestShoppingListsAttributesTransfer(
         ShoppingListTransfer $shoppingListTransfer,
         RestShoppingListsAttributesTransfer $restShoppingListsAttributesTransfer
@@ -26,12 +20,6 @@ class ShoppingListMapper implements ShoppingListMapperInterface
         return $restShoppingListsAttributesTransfer->fromArray($shoppingListTransfer->toArray(), true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\RestShoppingListRequestAttributesTransfer $restShoppingListRequestAttributesTransfer
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     public function mapRestShoppingListsAttributesTransferToShoppingListTransfer(
         RestShoppingListRequestAttributesTransfer $restShoppingListRequestAttributesTransfer,
         ShoppingListTransfer $shoppingListTransfer

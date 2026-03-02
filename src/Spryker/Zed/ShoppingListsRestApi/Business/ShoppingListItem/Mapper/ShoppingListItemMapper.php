@@ -16,12 +16,6 @@ use Spryker\Zed\ShoppingListsRestApi\ShoppingListsRestApiConfig;
 
 class ShoppingListItemMapper implements ShoppingListItemMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemRequestTransfer $shoppingListItemRequestTransfer
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     public function mapShoppingListItemRequestTransferToShoppingListTransfer(
         ShoppingListItemRequestTransfer $shoppingListItemRequestTransfer,
         ShoppingListTransfer $shoppingListTransfer
@@ -32,12 +26,6 @@ class ShoppingListItemMapper implements ShoppingListItemMapperInterface
             ->setCustomerReference($shoppingListItemRequestTransfer->getShoppingListItem()->getCustomerReference());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListResponseTransfer $shoppingListResponseTransfer
-     * @param \Generated\Shared\Transfer\ShoppingListItemResponseTransfer $shoppingListItemResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemResponseTransfer
-     */
     public function mapShoppingListResponseErrorsToShoppingListItemResponseErrors(
         ShoppingListResponseTransfer $shoppingListResponseTransfer,
         ShoppingListItemResponseTransfer $shoppingListItemResponseTransfer
@@ -51,11 +39,6 @@ class ShoppingListItemMapper implements ShoppingListItemMapperInterface
             ->addError(SharedShoppingListsRestApiConfig::ERROR_IDENTIFIER_SHOPPING_LIST_NOT_FOUND);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemResponseTransfer $shoppingListItemResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemResponseTransfer
-     */
     public function mapShoppingListResponseErrorsToRestCodes(
         ShoppingListItemResponseTransfer $shoppingListItemResponseTransfer
     ): ShoppingListItemResponseTransfer {

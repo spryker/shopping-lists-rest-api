@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\ShoppingListTransfer;
 
 interface ShoppingListCreatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListResponseTransfer
-     */
     public function createShoppingList(ShoppingListTransfer $shoppingListTransfer): ShoppingListResponseTransfer;
 }

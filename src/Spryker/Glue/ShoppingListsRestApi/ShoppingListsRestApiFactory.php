@@ -46,9 +46,6 @@ use Spryker\Glue\ShoppingListsRestApi\Processor\ShoppingListItem\ShoppingListIte
  */
 class ShoppingListsRestApiFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Glue\ShoppingListsRestApi\Processor\ShoppingList\ShoppingListReaderInterface
-     */
     public function createShoppingListReader(): ShoppingListReaderInterface
     {
         return new ShoppingListReader(
@@ -60,9 +57,6 @@ class ShoppingListsRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShoppingListsRestApi\Processor\ShoppingList\ShoppingListCreatorInterface
-     */
     public function createShoppingListCreator(): ShoppingListCreatorInterface
     {
         return new ShoppingListCreator(
@@ -72,9 +66,6 @@ class ShoppingListsRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShoppingListsRestApi\Processor\ShoppingList\ShoppingListUpdaterInterface
-     */
     public function createShoppingListUpdater(): ShoppingListUpdaterInterface
     {
         return new ShoppingListUpdater(
@@ -84,9 +75,6 @@ class ShoppingListsRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShoppingListsRestApi\Processor\ShoppingList\ShoppingListDeleterInterface
-     */
     public function createShoppingListDeleter(): ShoppingListDeleterInterface
     {
         return new ShoppingListDeleter(
@@ -96,9 +84,6 @@ class ShoppingListsRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShoppingListsRestApi\Processor\ShoppingListItem\ShoppingListItemAdderInterface
-     */
     public function createShoppingListItemAdder(): ShoppingListItemAdderInterface
     {
         return new ShoppingListItemAdder(
@@ -109,9 +94,6 @@ class ShoppingListsRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShoppingListsRestApi\Processor\ShoppingListItem\ShoppingListItemUpdaterInterface
-     */
     public function createShoppingListItemUpdater(): ShoppingListItemUpdaterInterface
     {
         return new ShoppingListItemUpdater(
@@ -122,9 +104,6 @@ class ShoppingListsRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShoppingListsRestApi\Processor\ShoppingListItem\ShoppingListItemDeleterInterface
-     */
     public function createShoppingListItemDeleter(): ShoppingListItemDeleterInterface
     {
         return new ShoppingListItemDeleter(
@@ -134,25 +113,16 @@ class ShoppingListsRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShoppingListsRestApi\Processor\Expander\ShoppingListItemExpanderInterface
-     */
     public function createShoppingListItemExpander(): ShoppingListItemExpanderInterface
     {
         return new ShoppingListItemExpander($this->createShoppingListItemRestResponseBuilder());
     }
 
-    /**
-     * @return \Spryker\Glue\ShoppingListsRestApi\Processor\Mapper\ShoppingListMapperInterface
-     */
     public function createShoppingListMapper(): ShoppingListMapperInterface
     {
         return new ShoppingListMapper();
     }
 
-    /**
-     * @return \Spryker\Glue\ShoppingListsRestApi\Processor\Mapper\ShoppingListItemMapperInterface
-     */
     public function createShoppingListItemMapper(): ShoppingListItemMapperInterface
     {
         return new ShoppingListItemMapper(
@@ -161,17 +131,11 @@ class ShoppingListsRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShoppingListsRestApi\Processor\Mapper\CustomerMapperInterface
-     */
     public function createCustomerMapper(): CustomerMapperInterface
     {
         return new CustomerMapper();
     }
 
-    /**
-     * @return \Spryker\Glue\ShoppingListsRestApi\Processor\RestRequest\ShoppingListRestRequestReaderInterface
-     */
     public function createShoppingListRestRequestReader(): ShoppingListRestRequestReaderInterface
     {
         return new ShoppingListRestRequestReader(
@@ -179,17 +143,11 @@ class ShoppingListsRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShoppingListsRestApi\Processor\RestRequest\ShoppingListItemRestRequestReaderInterface
-     */
     public function createShoppingListItemRestRequestReader(): ShoppingListItemRestRequestReaderInterface
     {
         return new ShoppingListItemRestRequestReader();
     }
 
-    /**
-     * @return \Spryker\Glue\ShoppingListsRestApi\Processor\RestResponseBuilder\ShoppingListRestResponseBuilderInterface
-     */
     public function createShoppingListRestResponseBuilder(): ShoppingListRestResponseBuilderInterface
     {
         return new ShoppingListRestResponseBuilder(
@@ -200,9 +158,6 @@ class ShoppingListsRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShoppingListsRestApi\Processor\RestResponseBuilder\ShoppingListItemRestResponseBuilderInterface
-     */
     public function createShoppingListItemRestResponseBuilder(): ShoppingListItemRestResponseBuilderInterface
     {
         return new ShoppingListItemRestResponseBuilder(
@@ -212,17 +167,11 @@ class ShoppingListsRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShoppingListsRestApi\Dependency\Client\ShoppingListsRestApiToShoppingListClientInterface
-     */
     public function getShoppingListClient(): ShoppingListsRestApiToShoppingListClientInterface
     {
         return $this->getProvidedDependency(ShoppingListsRestApiDependencyProvider::CLIENT_SHOPPING_LIST);
     }
 
-    /**
-     * @return \Spryker\Glue\ShoppingListsRestApi\Dependency\Client\ShoppingListsRestApiToGlossaryStorageClientInterface
-     */
     public function getGlossaryStorageClient(): ShoppingListsRestApiToGlossaryStorageClientInterface
     {
         return $this->getProvidedDependency(ShoppingListsRestApiDependencyProvider::CLIENT_GLOSSARY_STORAGE);

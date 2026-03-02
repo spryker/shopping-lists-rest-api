@@ -27,21 +27,11 @@ class ShoppingListsRestApiToShoppingListClientBridge implements ShoppingListsRes
         $this->shoppingListClient = $shoppingListClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListResponseTransfer
-     */
     public function findShoppingListByUuid(ShoppingListTransfer $shoppingListTransfer): ShoppingListResponseTransfer
     {
         return $this->shoppingListClient->findShoppingListByUuid($shoppingListTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListCriteriaTransfer $shoppingListCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListCollectionTransfer
-     */
     public function getShoppingListCollection(ShoppingListCriteriaTransfer $shoppingListCriteriaTransfer): ShoppingListCollectionTransfer
     {
         return $this->shoppingListClient->getShoppingListCollection($shoppingListCriteriaTransfer);

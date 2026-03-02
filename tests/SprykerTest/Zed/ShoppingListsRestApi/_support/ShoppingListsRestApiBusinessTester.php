@@ -132,11 +132,6 @@ class ShoppingListsRestApiBusinessTester extends Actor
      */
     protected $lastShoppingListName;
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListCollectionTransfer
-     */
     public function getCustomerShoppingListCollection(
         CustomerTransfer $customerTransfer
     ): ShoppingListCollectionTransfer {
@@ -161,11 +156,6 @@ class ShoppingListsRestApiBusinessTester extends Actor
         return $shoppingListCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListResponseTransfer
-     */
     public function findShoppingListByUuid(ShoppingListTransfer $shoppingListTransfer): ShoppingListResponseTransfer
     {
         $shoppingListResponseTransfer = new ShoppingListResponseTransfer();
@@ -201,11 +191,6 @@ class ShoppingListsRestApiBusinessTester extends Actor
         return $shoppingListResponseTransfer->setIsSuccess(true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListResponseTransfer
-     */
     public function createShoppingList(ShoppingListTransfer $shoppingListTransfer): ShoppingListResponseTransfer
     {
         $shoppingListResponseTransfer = new ShoppingListResponseTransfer();
@@ -229,11 +214,6 @@ class ShoppingListsRestApiBusinessTester extends Actor
         return $shoppingListResponseTransfer->setIsSuccess(true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListResponseTransfer
-     */
     public function updateShoppingList(ShoppingListTransfer $shoppingListTransfer): ShoppingListResponseTransfer
     {
         $shoppingListResponseTransfer = new ShoppingListResponseTransfer();
@@ -265,11 +245,6 @@ class ShoppingListsRestApiBusinessTester extends Actor
         return $shoppingListResponseTransfer->setIsSuccess(true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListResponseTransfer
-     */
     public function removeShoppingList(ShoppingListTransfer $shoppingListTransfer): ShoppingListResponseTransfer
     {
         $shoppingListResponseTransfer = new ShoppingListResponseTransfer();
@@ -291,11 +266,6 @@ class ShoppingListsRestApiBusinessTester extends Actor
         return $shoppingListResponseTransfer->setIsSuccess(true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemResponseTransfer
-     */
     public function addShoppingListItem(
         ShoppingListItemTransfer $shoppingListItemTransfer
     ): ShoppingListItemResponseTransfer {
@@ -320,11 +290,6 @@ class ShoppingListsRestApiBusinessTester extends Actor
             );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemResponseTransfer
-     */
     public function updateShoppingListItemById(
         ShoppingListItemTransfer $shoppingListItemTransfer
     ): ShoppingListItemResponseTransfer {
@@ -347,11 +312,6 @@ class ShoppingListsRestApiBusinessTester extends Actor
             );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemResponseTransfer
-     */
     public function removeItemById(
         ShoppingListItemTransfer $shoppingListItemTransfer
     ): ShoppingListItemResponseTransfer {

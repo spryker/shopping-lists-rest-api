@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\ShoppingListItemResponseTransfer;
 
 interface ShoppingListItemUpdaterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemRequestTransfer $shoppingListItemRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemResponseTransfer
-     */
     public function updateShoppingListItem(
         ShoppingListItemRequestTransfer $shoppingListItemRequestTransfer
     ): ShoppingListItemResponseTransfer;

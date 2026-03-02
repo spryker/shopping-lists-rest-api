@@ -35,12 +35,6 @@ class ShoppingListItemMapper implements ShoppingListItemMapperInterface
         $this->shoppingListItemRequestMapperPlugins = $shoppingListItemRequestMapperPlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     * @param \Generated\Shared\Transfer\RestShoppingListItemsAttributesTransfer $restShoppingListItemsAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestShoppingListItemsAttributesTransfer
-     */
     public function mapShoppingListItemTransferToRestShoppingListItemsAttributesTransfer(
         ShoppingListItemTransfer $shoppingListItemTransfer,
         RestShoppingListItemsAttributesTransfer $restShoppingListItemsAttributesTransfer
@@ -56,12 +50,6 @@ class ShoppingListItemMapper implements ShoppingListItemMapperInterface
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\RestShoppingListItemsAttributesTransfer $restShoppingListItemsAttributesTransfer
-     * @param \Generated\Shared\Transfer\ShoppingListItemRequestTransfer $shoppingListItemRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemRequestTransfer
-     */
     public function mapRestShoppingListItemsAttributesTransferToShoppingListItemRequestTransfer(
         RestShoppingListItemsAttributesTransfer $restShoppingListItemsAttributesTransfer,
         ShoppingListItemRequestTransfer $shoppingListItemRequestTransfer
@@ -77,12 +65,6 @@ class ShoppingListItemMapper implements ShoppingListItemMapperInterface
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     * @param \Generated\Shared\Transfer\RestShoppingListItemsAttributesTransfer $restShoppingListItemsAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestShoppingListItemsAttributesTransfer
-     */
     protected function executeRestShoppingListItemsAttributesMapperPlugis(
         ShoppingListItemTransfer $shoppingListItemTransfer,
         RestShoppingListItemsAttributesTransfer $restShoppingListItemsAttributesTransfer
@@ -97,12 +79,6 @@ class ShoppingListItemMapper implements ShoppingListItemMapperInterface
         return $restShoppingListItemsAttributesTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\RestShoppingListItemsAttributesTransfer $restShoppingListItemsAttributesTransfer
-     * @param \Generated\Shared\Transfer\ShoppingListItemRequestTransfer $shoppingListItemRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemRequestTransfer
-     */
     protected function executeShoppingListItemRequestMapperPlugins(
         RestShoppingListItemsAttributesTransfer $restShoppingListItemsAttributesTransfer,
         ShoppingListItemRequestTransfer $shoppingListItemRequestTransfer

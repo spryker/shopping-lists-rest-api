@@ -22,9 +22,6 @@ class ShoppingListsRestApiStub implements ShoppingListsRestApiStubInterface
      */
     protected $zedRequestClient;
 
-    /**
-     * @param \Spryker\Client\ShoppingListsRestApi\Dependency\Client\ShoppingListsRestApiToZedRequestClientInterface $zedRequestClient
-     */
     public function __construct(ShoppingListsRestApiToZedRequestClientInterface $zedRequestClient)
     {
         $this->zedRequestClient = $zedRequestClient;

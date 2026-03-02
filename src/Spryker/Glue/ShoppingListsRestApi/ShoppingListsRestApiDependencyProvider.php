@@ -37,11 +37,6 @@ class ShoppingListsRestApiDependencyProvider extends AbstractBundleDependencyPro
      */
     public const PLUGINS_SHOPPING_LIST_ITEM_REQUEST_MAPPER = 'PLUGINS_SHOPPING_LIST_ITEM_REQUEST_MAPPER';
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = parent::provideDependencies($container);
@@ -53,11 +48,6 @@ class ShoppingListsRestApiDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addShoppingListClient(Container $container): Container
     {
         $container->set(static::CLIENT_SHOPPING_LIST, function (Container $container) {
@@ -69,11 +59,6 @@ class ShoppingListsRestApiDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addGlossaryStorageClient(Container $container): Container
     {
         $container->set(static::CLIENT_GLOSSARY_STORAGE, function (Container $container) {
@@ -85,11 +70,6 @@ class ShoppingListsRestApiDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addRestShoppingListItemsAttributesMapperPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_REST_SHOPPING_LIST_ITEMS_ATTRIBUTES_MAPPER, function () {
@@ -99,11 +79,6 @@ class ShoppingListsRestApiDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addShoppingListItemRequestMapperPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_SHOPPING_LIST_ITEM_REQUEST_MAPPER, function () {

@@ -19,20 +19,11 @@ class ShoppingListRestRequestReader implements ShoppingListRestRequestReaderInte
      */
     protected $shoppingListResourceMapper;
 
-    /**
-     * @param \Spryker\Glue\ShoppingListsRestApi\Processor\Mapper\ShoppingListMapperInterface $shoppingListResourceMapper
-     */
     public function __construct(ShoppingListMapperInterface $shoppingListResourceMapper)
     {
         $this->shoppingListResourceMapper = $shoppingListResourceMapper;
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     * @param \Generated\Shared\Transfer\RestShoppingListRequestAttributesTransfer|null $restShoppingListRequestAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     public function readShoppingListTransferFromRequest(
         RestRequestInterface $restRequest,
         ?RestShoppingListRequestAttributesTransfer $restShoppingListRequestAttributesTransfer = null

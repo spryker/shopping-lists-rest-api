@@ -14,33 +14,16 @@ use Generated\Shared\Transfer\ShoppingListTransfer;
 
 interface ShoppingListItemMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemRequestTransfer $shoppingListItemRequestTransfer
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     public function mapShoppingListItemRequestTransferToShoppingListTransfer(
         ShoppingListItemRequestTransfer $shoppingListItemRequestTransfer,
         ShoppingListTransfer $shoppingListTransfer
     ): ShoppingListTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListResponseTransfer $shoppingListResponseTransfer
-     * @param \Generated\Shared\Transfer\ShoppingListItemResponseTransfer $shoppingListItemResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemResponseTransfer
-     */
     public function mapShoppingListResponseErrorsToShoppingListItemResponseErrors(
         ShoppingListResponseTransfer $shoppingListResponseTransfer,
         ShoppingListItemResponseTransfer $shoppingListItemResponseTransfer
     ): ShoppingListItemResponseTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemResponseTransfer $shoppingListItemResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemResponseTransfer
-     */
     public function mapShoppingListResponseErrorsToRestCodes(
         ShoppingListItemResponseTransfer $shoppingListItemResponseTransfer
     ): ShoppingListItemResponseTransfer;

@@ -31,11 +31,6 @@ class ShoppingListItemAdder implements ShoppingListItemAdderInterface
      */
     protected $shoppingListReader;
 
-    /**
-     * @param \Spryker\Zed\ShoppingListsRestApi\Dependency\Facade\ShoppingListsRestApiToShoppingListFacadeInterface $shoppingListFacade
-     * @param \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListItem\Mapper\ShoppingListItemMapperInterface $shoppingListItemMapper
-     * @param \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingList\ShoppingListReaderInterface $shoppingListReader
-     */
     public function __construct(
         ShoppingListsRestApiToShoppingListFacadeInterface $shoppingListFacade,
         ShoppingListItemMapperInterface $shoppingListItemMapper,
@@ -46,11 +41,6 @@ class ShoppingListItemAdder implements ShoppingListItemAdderInterface
         $this->shoppingListReader = $shoppingListReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemRequestTransfer $shoppingListItemRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemResponseTransfer
-     */
     public function addShoppingListItem(
         ShoppingListItemRequestTransfer $shoppingListItemRequestTransfer
     ): ShoppingListItemResponseTransfer {

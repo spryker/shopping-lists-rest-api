@@ -18,9 +18,6 @@ class ShoppingListItemExpander implements ShoppingListItemExpanderInterface
      */
     protected $shoppingListItemRestResponseBuilder;
 
-    /**
-     * @param \Spryker\Glue\ShoppingListsRestApi\Processor\RestResponseBuilder\ShoppingListItemRestResponseBuilderInterface $shoppingListItemRestResponseBuilder
-     */
     public function __construct(ShoppingListItemRestResponseBuilderInterface $shoppingListItemRestResponseBuilder)
     {
         $this->shoppingListItemRestResponseBuilder = $shoppingListItemRestResponseBuilder;

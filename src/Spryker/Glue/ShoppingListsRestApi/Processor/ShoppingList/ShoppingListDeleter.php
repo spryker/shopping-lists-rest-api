@@ -30,11 +30,6 @@ class ShoppingListDeleter implements ShoppingListDeleterInterface
      */
     protected $shoppingListRestResponseBuilder;
 
-    /**
-     * @param \Spryker\Client\ShoppingListsRestApi\ShoppingListsRestApiClientInterface $shoppingListsRestApiClient
-     * @param \Spryker\Glue\ShoppingListsRestApi\Processor\RestRequest\ShoppingListRestRequestReaderInterface $shoppingListRestRequestReader
-     * @param \Spryker\Glue\ShoppingListsRestApi\Processor\RestResponseBuilder\ShoppingListRestResponseBuilderInterface $shoppingListRestResponseBuilder
-     */
     public function __construct(
         ShoppingListsRestApiClientInterface $shoppingListsRestApiClient,
         ShoppingListRestRequestReaderInterface $shoppingListRestRequestReader,
@@ -45,11 +40,6 @@ class ShoppingListDeleter implements ShoppingListDeleterInterface
         $this->shoppingListRestResponseBuilder = $shoppingListRestResponseBuilder;
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function deleteShoppingList(RestRequestInterface $restRequest): RestResponseInterface
     {
         $shoppingListTransfer = $this->shoppingListRestRequestReader->readShoppingListTransferFromRequest($restRequest);

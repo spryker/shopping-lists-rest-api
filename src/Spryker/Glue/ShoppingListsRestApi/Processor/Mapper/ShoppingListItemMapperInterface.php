@@ -13,23 +13,11 @@ use Generated\Shared\Transfer\ShoppingListItemTransfer;
 
 interface ShoppingListItemMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     * @param \Generated\Shared\Transfer\RestShoppingListItemsAttributesTransfer $restShoppingListItemsAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestShoppingListItemsAttributesTransfer
-     */
     public function mapShoppingListItemTransferToRestShoppingListItemsAttributesTransfer(
         ShoppingListItemTransfer $shoppingListItemTransfer,
         RestShoppingListItemsAttributesTransfer $restShoppingListItemsAttributesTransfer
     ): RestShoppingListItemsAttributesTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\RestShoppingListItemsAttributesTransfer $restShoppingListItemsAttributesTransfer
-     * @param \Generated\Shared\Transfer\ShoppingListItemRequestTransfer $shoppingListItemRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemRequestTransfer
-     */
     public function mapRestShoppingListItemsAttributesTransferToShoppingListItemRequestTransfer(
         RestShoppingListItemsAttributesTransfer $restShoppingListItemsAttributesTransfer,
         ShoppingListItemRequestTransfer $shoppingListItemRequestTransfer

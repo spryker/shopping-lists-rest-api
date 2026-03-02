@@ -28,10 +28,6 @@ class ShoppingListItemReader implements ShoppingListItemReaderInterface
      */
     protected $shoppingListItemMapper;
 
-    /**
-     * @param \Spryker\Zed\ShoppingListsRestApi\Dependency\Facade\ShoppingListsRestApiToShoppingListFacadeInterface $shoppingListFacade
-     * @param \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListItem\Mapper\ShoppingListItemMapperInterface $shoppingListItemMapper
-     */
     public function __construct(
         ShoppingListsRestApiToShoppingListFacadeInterface $shoppingListFacade,
         ShoppingListItemMapperInterface $shoppingListItemMapper
@@ -40,11 +36,6 @@ class ShoppingListItemReader implements ShoppingListItemReaderInterface
         $this->shoppingListItemMapper = $shoppingListItemMapper;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemRequestTransfer $shoppingListItemRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemResponseTransfer
-     */
     public function findShoppingListItem(
         ShoppingListItemRequestTransfer $shoppingListItemRequestTransfer
     ): ShoppingListItemResponseTransfer {

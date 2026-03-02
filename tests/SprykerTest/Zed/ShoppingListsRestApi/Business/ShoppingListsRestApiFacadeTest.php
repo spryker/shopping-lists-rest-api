@@ -47,9 +47,6 @@ class ShoppingListsRestApiFacadeTest extends Unit
         parent::_before();
     }
 
-    /**
-     * @return void
-     */
     public function testShoppingListsRestApiFacadeWillGetCustomerShoppingListCollection(): void
     {
         /** @var \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListsRestApiFacade $shoppingListsRestApiFacade */
@@ -67,9 +64,6 @@ class ShoppingListsRestApiFacadeTest extends Unit
         $this->assertCount(2, $restShoppingListCollectionResponseTransfer->getShoppingLists());
     }
 
-    /**
-     * @return void
-     */
     public function testShoppingListsRestApiFacadeWillCreateShoppingList(): void
     {
         /** @var \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListsRestApiFacade $shoppingListsRestApiFacade */
@@ -91,9 +85,6 @@ class ShoppingListsRestApiFacadeTest extends Unit
         $this->assertSame($this->tester::OWNER_NAME, $shoppingListResponseTransfer->getShoppingList()->getOwner());
     }
 
-    /**
-     * @return void
-     */
     public function testShoppingListsRestApiFacadeWillNotCreateShoppingListWhenNameAlreadyExists(): void
     {
         /** @var \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListsRestApiFacade $shoppingListsRestApiFacade */
@@ -113,9 +104,6 @@ class ShoppingListsRestApiFacadeTest extends Unit
         ], $shoppingListResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testShoppingListsRestApiFacadeWillUpdateShoppingList(): void
     {
         /** @var \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListsRestApiFacade $shoppingListsRestApiFacade */
@@ -142,9 +130,6 @@ class ShoppingListsRestApiFacadeTest extends Unit
         $this->assertSame($this->tester::OWNER_NAME, $shoppingListResponseTransfer->getShoppingList()->getOwner());
     }
 
-    /**
-     * @return void
-     */
     public function testShoppingListsRestApiFacadeWillNotUpdateShoppingListWhenNameAlreadyExists(): void
     {
         /** @var \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListsRestApiFacade $shoppingListsRestApiFacade */
@@ -165,9 +150,6 @@ class ShoppingListsRestApiFacadeTest extends Unit
         ], $shoppingListResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testShoppingListsRestApiFacadeWillNotUpdateShoppingListThatDoesNotExist(): void
     {
         /** @var \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListsRestApiFacade $shoppingListsRestApiFacade */
@@ -188,9 +170,6 @@ class ShoppingListsRestApiFacadeTest extends Unit
         ], $shoppingListResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testShoppingListsRestApiFacadeWillDeleteShoppingList(): void
     {
         /** @var \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListsRestApiFacade $shoppingListsRestApiFacade */
@@ -208,9 +187,6 @@ class ShoppingListsRestApiFacadeTest extends Unit
         $this->assertNull($shoppingListResponseTransfer->getShoppingList());
     }
 
-    /**
-     * @return void
-     */
     public function testShoppingListsRestApiFacadeWillNotDeleteShoppingListThatBelongToOtherCustomer(): void
     {
         /** @var \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListsRestApiFacade $shoppingListsRestApiFacade */
@@ -230,9 +206,6 @@ class ShoppingListsRestApiFacadeTest extends Unit
         ], $shoppingListResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testShoppingListsRestApiFacadeWillNotDeleteShoppingListThatDoesNotExist(): void
     {
         /** @var \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListsRestApiFacade $shoppingListsRestApiFacade */
@@ -252,9 +225,6 @@ class ShoppingListsRestApiFacadeTest extends Unit
         ], $shoppingListResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testShoppingListsRestApiFacadeWillAddItemToShoppingList(): void
     {
         /** @var \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListsRestApiFacade $shoppingListsRestApiFacade */
@@ -289,9 +259,6 @@ class ShoppingListsRestApiFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShoppingListsRestApiFacadeWillNotAddItemToShoppingListWithBadQuantity(): void
     {
         /** @var \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListsRestApiFacade $shoppingListsRestApiFacade */
@@ -316,9 +283,6 @@ class ShoppingListsRestApiFacadeTest extends Unit
         ], $shoppingListItemResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testShoppingListsRestApiFacadeWillNotAddItemToShoppingListWithBadSku(): void
     {
         /** @var \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListsRestApiFacade $shoppingListsRestApiFacade */
@@ -343,9 +307,6 @@ class ShoppingListsRestApiFacadeTest extends Unit
         ], $shoppingListItemResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testShoppingListsRestApiFacadeWillNotAddItemToShoppingListWithoutShoppingListItem(): void
     {
         $this->expectException(RequiredTransferPropertyException::class);
@@ -360,9 +321,6 @@ class ShoppingListsRestApiFacadeTest extends Unit
         $shoppingListsRestApiFacade->addShoppingListItem($restShoppingListRequestTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShoppingListsRestApiFacadeWillUpdateShoppingListItem(): void
     {
         /** @var \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListsRestApiFacade $shoppingListsRestApiFacade */
@@ -393,9 +351,6 @@ class ShoppingListsRestApiFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShoppingListsRestApiFacadeWillNotUpdateShoppingListItemWithBadShoppingListUuid(): void
     {
         /** @var \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListsRestApiFacade $shoppingListsRestApiFacade */
@@ -421,9 +376,6 @@ class ShoppingListsRestApiFacadeTest extends Unit
         ], $shoppingListItemResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testShoppingListsRestApiFacadeWillNotUpdateShoppingListItemWithBadShoppingListItemUuid(): void
     {
         /** @var \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListsRestApiFacade $shoppingListsRestApiFacade */
@@ -449,9 +401,6 @@ class ShoppingListsRestApiFacadeTest extends Unit
         ], $shoppingListItemResponseTransfer->getErrors());
     }
 
-    /**
-     * @return void
-     */
     public function testShoppingListsRestApiFacadeWillRemoveItemFromShoppingList(): void
     {
         /** @var \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListsRestApiFacade $shoppingListsRestApiFacade */
@@ -472,9 +421,6 @@ class ShoppingListsRestApiFacadeTest extends Unit
         $this->assertTrue($shoppingListItemResponseTransfer->getIsSuccess());
     }
 
-    /**
-     * @return void
-     */
     public function testShoppingListsRestApiFacadeWillNotRemoveItemFromShoppingListWithoutWritePermission(): void
     {
         /** @var \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListsRestApiFacade $shoppingListsRestApiFacade */

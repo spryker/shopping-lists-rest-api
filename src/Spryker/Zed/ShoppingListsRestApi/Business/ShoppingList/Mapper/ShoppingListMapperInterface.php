@@ -12,22 +12,11 @@ use Generated\Shared\Transfer\ShoppingListTransfer;
 
 interface ShoppingListMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListResponseTransfer $shoppingListResponseTransfer
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     public function mapShoppingListResponseTransferToShoppingListTransfer(
         ShoppingListResponseTransfer $shoppingListResponseTransfer,
         ShoppingListTransfer $shoppingListTransfer
     ): ShoppingListTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListResponseTransfer $shoppingListResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListResponseTransfer
-     */
     public function mapShoppingListResponseErrorsToRestCodes(
         ShoppingListResponseTransfer $shoppingListResponseTransfer
     ): ShoppingListResponseTransfer;

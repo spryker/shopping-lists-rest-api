@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\RestUserTransfer;
 
 interface CustomerMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\RestUserTransfer $restUserTransfer
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerTransfer
-     */
     public function mapRestUserTransferToCustomerTransfer(
         RestUserTransfer $restUserTransfer,
         CustomerTransfer $customerTransfer

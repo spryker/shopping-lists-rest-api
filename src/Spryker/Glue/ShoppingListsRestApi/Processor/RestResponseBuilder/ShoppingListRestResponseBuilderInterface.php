@@ -13,18 +13,8 @@ use Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface;
 
 interface ShoppingListRestResponseBuilderInterface extends RestResponseBuilderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function buildShoppingListRestResponse(ShoppingListTransfer $shoppingListTransfer): RestResponseInterface;
 
-    /**
-     * @param \Generated\Shared\Transfer\RestShoppingListCollectionResponseTransfer $restShoppingListCollectionResponseTransfer
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function buildShoppingListCollectionRestResponse(
         RestShoppingListCollectionResponseTransfer $restShoppingListCollectionResponseTransfer
     ): RestResponseInterface;

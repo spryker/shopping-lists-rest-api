@@ -35,11 +35,6 @@ class ShoppingListItemRestResponseBuilder extends RestResponseBuilder implements
      */
     protected $glossaryStorageClient;
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface $restResourceBuilder
-     * @param \Spryker\Glue\ShoppingListsRestApi\Processor\Mapper\ShoppingListItemMapperInterface $shoppingListItemMapper
-     * @param \Spryker\Glue\ShoppingListsRestApi\Dependency\Client\ShoppingListsRestApiToGlossaryStorageClientInterface $glossaryStorageClient
-     */
     public function __construct(
         RestResourceBuilderInterface $restResourceBuilder,
         ShoppingListItemMapperInterface $shoppingListItemMapper,
@@ -69,12 +64,6 @@ class ShoppingListItemRestResponseBuilder extends RestResponseBuilder implements
         return $restResources;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     * @param string $idShoppingList
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function buildShoppingListItemRestResponse(
         ShoppingListItemTransfer $shoppingListItemTransfer,
         string $idShoppingList
@@ -84,12 +73,6 @@ class ShoppingListItemRestResponseBuilder extends RestResponseBuilder implements
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListItemTransfer $shoppingListItemTransfer
-     * @param string $idShoppingList
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceInterface
-     */
     protected function createShoppingListItemRestResource(
         ShoppingListItemTransfer $shoppingListItemTransfer,
         string $idShoppingList
@@ -116,12 +99,6 @@ class ShoppingListItemRestResponseBuilder extends RestResponseBuilder implements
         return $shoppingListItemResource;
     }
 
-    /**
-     * @param string $idShoppingList
-     * @param string $idShoppingListItem
-     *
-     * @return string
-     */
     protected function createSelfLinkForShoppingListItem(string $idShoppingList, string $idShoppingListItem): string
     {
         return sprintf(

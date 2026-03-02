@@ -37,12 +37,6 @@ class ShoppingListItemAdder implements ShoppingListItemAdderInterface
      */
     protected $shoppingListItemRestResponseBuilder;
 
-    /**
-     * @param \Spryker\Client\ShoppingListsRestApi\ShoppingListsRestApiClientInterface $shoppingListsRestApiClient
-     * @param \Spryker\Glue\ShoppingListsRestApi\Processor\Mapper\ShoppingListItemMapperInterface $shoppingListItemMapper
-     * @param \Spryker\Glue\ShoppingListsRestApi\Processor\RestRequest\ShoppingListItemRestRequestReaderInterface $shoppingListItemRestRequestReader
-     * @param \Spryker\Glue\ShoppingListsRestApi\Processor\RestResponseBuilder\ShoppingListItemRestResponseBuilderInterface $shoppingListItemRestResponseBuilder
-     */
     public function __construct(
         ShoppingListsRestApiClientInterface $shoppingListsRestApiClient,
         ShoppingListItemMapperInterface $shoppingListItemMapper,
@@ -55,12 +49,6 @@ class ShoppingListItemAdder implements ShoppingListItemAdderInterface
         $this->shoppingListItemRestResponseBuilder = $shoppingListItemRestResponseBuilder;
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     * @param \Generated\Shared\Transfer\RestShoppingListItemsAttributesTransfer $restShoppingListItemsAttributesTransfer
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function addShoppingListItem(
         RestRequestInterface $restRequest,
         RestShoppingListItemsAttributesTransfer $restShoppingListItemsAttributesTransfer

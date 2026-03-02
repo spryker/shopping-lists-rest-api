@@ -31,11 +31,6 @@ class ShoppingListUpdater implements ShoppingListUpdaterInterface
      */
     protected $shoppingListRestResponseBuilder;
 
-    /**
-     * @param \Spryker\Client\ShoppingListsRestApi\ShoppingListsRestApiClientInterface $shoppingListsRestApiClient
-     * @param \Spryker\Glue\ShoppingListsRestApi\Processor\RestRequest\ShoppingListRestRequestReaderInterface $shoppingListRestRequestReaderInterface
-     * @param \Spryker\Glue\ShoppingListsRestApi\Processor\RestResponseBuilder\ShoppingListRestResponseBuilderInterface $shoppingListRestResponseBuilderInterface
-     */
     public function __construct(
         ShoppingListsRestApiClientInterface $shoppingListsRestApiClient,
         ShoppingListRestRequestReaderInterface $shoppingListRestRequestReaderInterface,
@@ -46,12 +41,6 @@ class ShoppingListUpdater implements ShoppingListUpdaterInterface
         $this->shoppingListRestResponseBuilder = $shoppingListRestResponseBuilderInterface;
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     * @param \Generated\Shared\Transfer\RestShoppingListRequestAttributesTransfer $restShoppingListRequestAttributesTransfer
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function updateShoppingList(
         RestRequestInterface $restRequest,
         RestShoppingListRequestAttributesTransfer $restShoppingListRequestAttributesTransfer

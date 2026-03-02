@@ -27,10 +27,6 @@ class RestResponseBuilder implements RestResponseBuilderInterface
      */
     protected $glossaryStorageClient;
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface $restResourceBuilder
-     * @param \Spryker\Glue\ShoppingListsRestApi\Dependency\Client\ShoppingListsRestApiToGlossaryStorageClientInterface $glossaryStorageClient
-     */
     public function __construct(
         RestResourceBuilderInterface $restResourceBuilder,
         ShoppingListsRestApiToGlossaryStorageClientInterface $glossaryStorageClient
@@ -39,9 +35,6 @@ class RestResponseBuilder implements RestResponseBuilderInterface
         $this->glossaryStorageClient = $glossaryStorageClient;
     }
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createRestResponse(): RestResponseInterface
     {
         return $this->restResourceBuilder->createRestResponse();
@@ -81,11 +74,6 @@ class RestResponseBuilder implements RestResponseBuilderInterface
         return $restResponse;
     }
 
-    /**
-     * @param string $errorMessage
-     *
-     * @return \Generated\Shared\Transfer\RestErrorMessageTransfer
-     */
     protected function createErrorMessageTransfer(string $errorMessage): RestErrorMessageTransfer
     {
         return (new RestErrorMessageTransfer())

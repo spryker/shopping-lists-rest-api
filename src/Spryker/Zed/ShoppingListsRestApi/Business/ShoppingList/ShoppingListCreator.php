@@ -24,10 +24,6 @@ class ShoppingListCreator implements ShoppingListCreatorInterface
      */
     protected $shoppingListMapper;
 
-    /**
-     * @param \Spryker\Zed\ShoppingListsRestApi\Dependency\Facade\ShoppingListsRestApiToShoppingListFacadeInterface $shoppingListFacade
-     * @param \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingList\Mapper\ShoppingListMapperInterface $shoppingListMapper
-     */
     public function __construct(
         ShoppingListsRestApiToShoppingListFacadeInterface $shoppingListFacade,
         ShoppingListMapperInterface $shoppingListMapper
@@ -36,11 +32,6 @@ class ShoppingListCreator implements ShoppingListCreatorInterface
         $this->shoppingListMapper = $shoppingListMapper;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListResponseTransfer
-     */
     public function createShoppingList(ShoppingListTransfer $shoppingListTransfer): ShoppingListResponseTransfer
     {
         $shoppingListResponseTransfer = $this->shoppingListFacade->createShoppingList($shoppingListTransfer);

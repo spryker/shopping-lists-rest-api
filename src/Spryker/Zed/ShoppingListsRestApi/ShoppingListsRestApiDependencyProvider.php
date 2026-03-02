@@ -21,11 +21,6 @@ class ShoppingListsRestApiDependencyProvider extends AbstractBundleDependencyPro
      */
     public const FACADE_SHOPPING_LIST = 'FACADE_SHOPPING_LIST';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -34,11 +29,6 @@ class ShoppingListsRestApiDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function addShoppingListFacade(Container $container): Container
     {
         $container->set(static::FACADE_SHOPPING_LIST, function (Container $container) {

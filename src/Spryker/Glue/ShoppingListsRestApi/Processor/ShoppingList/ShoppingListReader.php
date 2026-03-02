@@ -48,13 +48,6 @@ class ShoppingListReader implements ShoppingListReaderInterface
      */
     protected $shoppingListRestResponseBuilder;
 
-    /**
-     * @param \Spryker\Glue\ShoppingListsRestApi\Processor\Mapper\CustomerMapperInterface $customerMapper
-     * @param \Spryker\Client\ShoppingListsRestApi\ShoppingListsRestApiClientInterface $shoppingListsRestApiClient
-     * @param \Spryker\Glue\ShoppingListsRestApi\Dependency\Client\ShoppingListsRestApiToShoppingListClientInterface $shoppingListClient
-     * @param \Spryker\Glue\ShoppingListsRestApi\Processor\RestRequest\ShoppingListRestRequestReaderInterface $shoppingListRestRequestReader
-     * @param \Spryker\Glue\ShoppingListsRestApi\Processor\RestResponseBuilder\ShoppingListRestResponseBuilderInterface $shoppingListRestResponseBuilder
-     */
     public function __construct(
         CustomerMapperInterface $customerMapper,
         ShoppingListsRestApiClientInterface $shoppingListsRestApiClient,
@@ -69,11 +62,6 @@ class ShoppingListReader implements ShoppingListReaderInterface
         $this->shoppingListRestResponseBuilder = $shoppingListRestResponseBuilder;
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function getCustomerShoppingListCollection(RestRequestInterface $restRequest): RestResponseInterface
     {
         $customerTransfer = $this->customerMapper->mapRestUserTransferToCustomerTransfer(
@@ -97,12 +85,6 @@ class ShoppingListReader implements ShoppingListReaderInterface
         );
     }
 
-    /**
-     * @param string $uuidShoppingList
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function getCustomerShoppingList(string $uuidShoppingList, RestRequestInterface $restRequest): RestResponseInterface
     {
         $shoppingListTransfer = $this->shoppingListRestRequestReader->readShoppingListTransferFromRequest(
@@ -122,11 +104,6 @@ class ShoppingListReader implements ShoppingListReaderInterface
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListCollectionTransfer
-     */
     protected function getShoppingListCollectionForCustomer(CustomerTransfer $customerTransfer): ShoppingListCollectionTransfer
     {
         $shoppingListConditionsTransfer = (new ShoppingListConditionsTransfer())

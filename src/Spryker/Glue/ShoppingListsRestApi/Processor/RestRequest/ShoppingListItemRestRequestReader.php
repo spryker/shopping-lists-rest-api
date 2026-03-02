@@ -15,11 +15,6 @@ use Spryker\Shared\ShoppingListsRestApi\ShoppingListsRestApiConfig as SharedShop
 
 class ShoppingListItemRestRequestReader implements ShoppingListItemRestRequestReaderInterface
 {
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemRequestTransfer
-     */
     public function readShoppingListItemRequestTransferFromRequest(RestRequestInterface $restRequest): ShoppingListItemRequestTransfer
     {
         $shoppingListItemRequestTransfer = new ShoppingListItemRequestTransfer();
@@ -38,11 +33,6 @@ class ShoppingListItemRestRequestReader implements ShoppingListItemRestRequestRe
             ->setShoppingListItem($shoppingListItemTransfer);
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListItemRequestTransfer
-     */
     public function readShoppingListItemRequestTransferByUuid(RestRequestInterface $restRequest): ShoppingListItemRequestTransfer
     {
         $uuidShoppingListItem = $restRequest->getResource()->getId();
@@ -63,11 +53,6 @@ class ShoppingListItemRestRequestReader implements ShoppingListItemRestRequestRe
         return $shoppingListItemRequestTransfer;
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return string|null
-     */
     protected function readUuidShoppingList(RestRequestInterface $restRequest): ?string
     {
         $shoppingListResource = $restRequest->findParentResourceByType(ShoppingListsRestApiConfig::RESOURCE_SHOPPING_LISTS);

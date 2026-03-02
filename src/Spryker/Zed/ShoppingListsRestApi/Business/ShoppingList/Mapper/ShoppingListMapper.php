@@ -13,12 +13,6 @@ use Spryker\Zed\ShoppingListsRestApi\ShoppingListsRestApiConfig;
 
 class ShoppingListMapper implements ShoppingListMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListResponseTransfer $shoppingListResponseTransfer
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListTransfer
-     */
     public function mapShoppingListResponseTransferToShoppingListTransfer(
         ShoppingListResponseTransfer $shoppingListResponseTransfer,
         ShoppingListTransfer $shoppingListTransfer
@@ -29,11 +23,6 @@ class ShoppingListMapper implements ShoppingListMapperInterface
         return $shoppingListTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListResponseTransfer $shoppingListResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShoppingListResponseTransfer
-     */
     public function mapShoppingListResponseErrorsToRestCodes(
         ShoppingListResponseTransfer $shoppingListResponseTransfer
     ): ShoppingListResponseTransfer {

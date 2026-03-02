@@ -39,12 +39,6 @@ class ShoppingListRestResponseBuilder extends RestResponseBuilder implements Sho
      */
     protected $glossaryStorageClient;
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface $restResourceBuilder
-     * @param \Spryker\Glue\ShoppingListsRestApi\Processor\Mapper\ShoppingListMapperInterface $shoppingListsResourceMapper
-     * @param \Spryker\Glue\ShoppingListsRestApi\Processor\RestResponseBuilder\ShoppingListItemRestResponseBuilderInterface $shoppingListItemRestResponseBuilder
-     * @param \Spryker\Glue\ShoppingListsRestApi\Dependency\Client\ShoppingListsRestApiToGlossaryStorageClientInterface $glossaryStorageClient
-     */
     public function __construct(
         RestResourceBuilderInterface $restResourceBuilder,
         ShoppingListMapperInterface $shoppingListsResourceMapper,
@@ -57,22 +51,12 @@ class ShoppingListRestResponseBuilder extends RestResponseBuilder implements Sho
         $this->shoppingListItemRestResponseBuilder = $shoppingListItemRestResponseBuilder;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function buildShoppingListRestResponse(
         ShoppingListTransfer $shoppingListTransfer
     ): RestResponseInterface {
         return $this->createRestResponse()->addResource($this->createShoppingListRestResource($shoppingListTransfer));
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\RestShoppingListCollectionResponseTransfer $restShoppingListCollectionResponseTransfer
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function buildShoppingListCollectionRestResponse(
         RestShoppingListCollectionResponseTransfer $restShoppingListCollectionResponseTransfer
     ): RestResponseInterface {
@@ -85,11 +69,6 @@ class ShoppingListRestResponseBuilder extends RestResponseBuilder implements Sho
         return $restResponse;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShoppingListTransfer $shoppingListTransfer
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceInterface
-     */
     protected function createShoppingListRestResource(
         ShoppingListTransfer $shoppingListTransfer
     ): RestResourceInterface {

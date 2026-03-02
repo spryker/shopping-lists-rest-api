@@ -36,9 +36,6 @@ use Spryker\Zed\ShoppingListsRestApi\ShoppingListsRestApiDependencyProvider;
  */
 class ShoppingListsRestApiBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingList\ShoppingListReaderInterface
-     */
     public function createShoppingListReader(): ShoppingListReaderInterface
     {
         return new ShoppingListReader(
@@ -47,9 +44,6 @@ class ShoppingListsRestApiBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingList\ShoppingListCreatorInterface
-     */
     public function createShoppingListCreator(): ShoppingListCreatorInterface
     {
         return new ShoppingListCreator(
@@ -58,9 +52,6 @@ class ShoppingListsRestApiBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingList\ShoppingListUpdaterInterface
-     */
     public function createShoppingListUpdater(): ShoppingListUpdaterInterface
     {
         return new ShoppingListUpdater(
@@ -69,9 +60,6 @@ class ShoppingListsRestApiBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingList\ShoppingListDeleterInterface
-     */
     public function createShoppingListDeleter(): ShoppingListDeleterInterface
     {
         return new ShoppingListDeleter(
@@ -80,9 +68,6 @@ class ShoppingListsRestApiBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListItem\ShoppingListItemAdderInterface
-     */
     public function createShoppingListItemAdder(): ShoppingListItemAdderInterface
     {
         return new ShoppingListItemAdder(
@@ -92,9 +77,6 @@ class ShoppingListsRestApiBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListItem\ShoppingListItemUpdaterInterface
-     */
     public function createShoppingListItemUpdater(): ShoppingListItemUpdaterInterface
     {
         return new ShoppingListItemUpdater(
@@ -104,9 +86,6 @@ class ShoppingListsRestApiBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListItem\ShoppingListItemDeleterInterface
-     */
     public function createShoppingListItemDeleter(): ShoppingListItemDeleterInterface
     {
         return new ShoppingListItemDeleter(
@@ -116,9 +95,6 @@ class ShoppingListsRestApiBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListItem\ShoppingListItemReaderInterface
-     */
     public function createShoppingListItemReader(): ShoppingListItemReaderInterface
     {
         return new ShoppingListItemReader(
@@ -127,25 +103,16 @@ class ShoppingListsRestApiBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingListItem\Mapper\ShoppingListItemMapperInterface
-     */
     public function createShoppingListItemMapper(): ShoppingListItemMapperInterface
     {
         return new ShoppingListItemMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\ShoppingListsRestApi\Business\ShoppingList\Mapper\ShoppingListMapperInterface
-     */
     public function createShoppingListMapper(): ShoppingListMapperInterface
     {
         return new ShoppingListMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\ShoppingListsRestApi\Dependency\Facade\ShoppingListsRestApiToShoppingListFacadeInterface
-     */
     public function getShoppingListFacade(): ShoppingListsRestApiToShoppingListFacadeInterface
     {
         return $this->getProvidedDependency(ShoppingListsRestApiDependencyProvider::FACADE_SHOPPING_LIST);
