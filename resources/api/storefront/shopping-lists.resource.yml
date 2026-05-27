@@ -1,0 +1,142 @@
+resource:
+    name: ShoppingLists
+    shortName: shopping-lists
+    description: 'Storefront shopping lists.'
+    provider: Spryker\Glue\ShoppingListsRestApi\Api\Storefront\Provider\ShoppingListsStorefrontProvider
+
+    paginationEnabled: false
+
+    security: "is_granted('ROLE_CUSTOMER')"
+
+    operations:
+        - type: GetCollection
+          name: getShoppingLists
+          description: 'Returns the list of shopping lists for the authenticated customer.'
+          openapiContext:
+              responses:
+                  200:
+                      description: 'Collection of shopping lists for the authenticated company user.'
+                  401:
+                      description: 'Missing or invalid access token.'
+                  403:
+                      description: 'Authenticated customer is not a company user.'
+
+        - type: Get
+          name: getShoppingList
+          description: 'Returns a shopping list by UUID.'
+          openapiContext:
+              responses:
+                  200:
+                      description: 'Shopping list returned.'
+                  401:
+                      description: 'Missing or invalid access token.'
+                  403:
+                      description: 'Authenticated customer is not a company user.'
+                  404:
+                      description: 'Shopping list not found (code 1503).'
+
+        - type: Post
+          name: createShoppingList
+          description: 'Creates a new shopping list.'
+          processor: Spryker\Glue\ShoppingListsRestApi\Api\Storefront\Processor\ShoppingListsStorefrontProcessor
+          openapiContext:
+              responses:
+                  201:
+                      description: 'Shopping list created.'
+                  400:
+                      description: 'Name not provided (code 1501).'
+                  401:
+                      description: 'Missing or invalid access token.'
+                  403:
+                      description: 'Authenticated customer is not a company user.'
+                  422:
+                      description: 'Shopping list with given name already exists (code 1506).'
+
+        - type: Patch
+          name: updateShoppingList
+          description: 'Updates a shopping list name.'
+          processor: Spryker\Glue\ShoppingListsRestApi\Api\Storefront\Processor\ShoppingListsStorefrontProcessor
+          read: false
+          openapiContext:
+              responses:
+                  200:
+                      description: 'Shopping list updated.'
+                  400:
+                      description: 'Shopping list id not specified (code 1501).'
+                  401:
+                      description: 'Missing or invalid access token.'
+                  403:
+                      description: 'Write permission required (code 1505).'
+                  404:
+                      description: 'Shopping list not found (code 1503).'
+                  422:
+                      description: 'Shopping list with given name already exists (code 1506).'
+
+        - type: Delete
+          name: deleteShoppingList
+          description: 'Deletes a shopping list.'
+          processor: Spryker\Glue\ShoppingListsRestApi\Api\Storefront\Processor\ShoppingListsStorefrontProcessor
+          openapiContext:
+              responses:
+                  204:
+                      description: 'Shopping list deleted.'
+                  400:
+                      description: 'Shopping list id not specified (code 1501).'
+                  401:
+                      description: 'Missing or invalid access token.'
+                  403:
+                      description: 'Write permission required (code 1505).'
+                  404:
+                      description: 'Shopping list not found (code 1503).'
+
+    includes:
+        - relationshipName: shopping-list-items
+          targetResource: ShoppingListItems
+          uriTemplate: /shopping-lists/{shoppingListUuid}/shopping-list-items
+          uriVariableMappings:
+              uuid: shoppingListUuid
+
+    properties:
+        uuid:
+            type: string
+            identifier: true
+            writable: false
+            readable: false
+            description: 'Shopping list unique identifier.'
+            openapiContext:
+                example: '12345678-1234-1234-1234-123456789012'
+        name:
+            type: string
+            writable: true
+            readable: true
+            description: 'Shopping list name.'
+            openapiContext:
+                example: 'My Shopping List'
+        numberOfItems:
+            type: integer
+            writable: false
+            readable: true
+            description: 'Number of items in the shopping list.'
+            openapiContext:
+                example: 3
+        owner:
+            type: string
+            writable: false
+            readable: true
+            description: 'Full name of the shopping list owner.'
+            openapiContext:
+                example: 'John Doe'
+        createdAt:
+            type: string
+            writable: false
+            readable: true
+            description: 'Date and time when the shopping list was created.'
+            openapiContext:
+                example: '2021-01-01T00:00:00+0000'
+        updatedAt:
+            type: string
+            writable: false
+            readable: true
+            description: 'Date and time when the shopping list was last updated.'
+            openapiContext:
+                example: '2021-01-01T00:00:00+0000'

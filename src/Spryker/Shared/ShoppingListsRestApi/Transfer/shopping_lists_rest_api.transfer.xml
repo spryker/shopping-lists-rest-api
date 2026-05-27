@@ -6,6 +6,11 @@
         <property name="companyUserId" type="int" description="The unique identifier for a company user."/>
         <property name="customerReference" type="string" description="A unique reference for a customer."/>
         <property name="idCompanyUser" type="int"/>
+        <property name="name" type="string" description="The name of an entity (e.g., user, category, product, role)."/>
+        <property name="numberOfItems" type="int" description="The number of items in a collection."/>
+        <property name="owner" type="string" description="The owner of an entity."/>
+        <property name="createdAt" type="string" description="The timestamp when an entity was created."/>
+        <property name="updatedAt" type="string" description="The timestamp when an entity was last updated."/>
         <property name="items" type="ShoppingListItem[]" singular="item" description="A collection of items, typically in a cart, order, or list."/>
         <property name="idShoppingList" type="int"/>
     </transfer>
@@ -31,6 +36,8 @@
         <property name="uuid" type="string" description="A Universally Unique Identifier for an entity."/>
         <property name="idCompanyUser" type="int"/>
         <property name="customerReference" type="string" description="A unique reference for a customer."/>
+        <property name="sku" type="string" description="The Stock Keeping Unit, a unique identifier for a concrete product."/>
+        <property name="quantity" type="int" description="The number of units for an item."/>
         <property name="fkShoppingList" type="int"/>
     </transfer>
 

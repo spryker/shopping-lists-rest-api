@@ -1,0 +1,171 @@
+resource:
+    name: ShoppingListItems
+    shortName: shopping-list-items
+    description: 'Storefront shopping list items.'
+    provider: Spryker\Glue\ShoppingListsRestApi\Api\Storefront\Provider\ShoppingListItemsStorefrontProvider
+
+    paginationEnabled: false
+
+    security: "is_granted('ROLE_CUSTOMER')"
+
+    operations:
+        - type: GetCollection
+          name: getShoppingListItems
+          description: 'Returns shopping list items for a given shopping list.'
+          uriTemplate: /shopping-lists/{shoppingListUuid}/shopping-list-items
+          uriVariables:
+              shoppingListUuid:
+                  identifiers: [shoppingListUuid]
+          openapiContext:
+              responses:
+                  200:
+                      description: 'Collection of items for the given shopping list.'
+                  400:
+                      description: 'Shopping list id not specified (code 1501).'
+                  401:
+                      description: 'Missing or invalid access token.'
+                  403:
+                      description: 'Authenticated customer is not a company user.'
+                  404:
+                      description: 'Shopping list not found (code 1503).'
+
+        # This Get operation exists solely to give API Platform the item-level URI template
+        # /shopping-lists/{shoppingListUuid}/shopping-list-items/{uuid}, which is required for
+        # correct self-link generation on included shopping-list-items resources.
+        # The legacy ShoppingListItemRestResponseBuilder::createSelfLinkForShoppingListItem()
+        # built this URL explicitly; here AP's IRI converter derives it automatically once
+        # shoppingListUuid is declared as an identifier and populated by the provider.
+        - type: Get
+          name: getShoppingListItem
+          description: 'Returns a single shopping list item by UUID.'
+          uriTemplate: /shopping-lists/{shoppingListUuid}/shopping-list-items/{uuid}
+          uriVariables:
+              shoppingListUuid:
+                  identifiers: [shoppingListUuid]
+              uuid:
+                  identifiers: [uuid]
+          openapiContext:
+              responses:
+                  200:
+                      description: 'Shopping list item returned.'
+                  401:
+                      description: 'Missing or invalid access token.'
+                  403:
+                      description: 'Authenticated customer is not a company user.'
+                  404:
+                      description: 'Shopping list not found (code 1503) or item not found (code 1504).'
+
+        - type: Post
+          name: addShoppingListItem
+          description: 'Adds an item to a shopping list.'
+          uriTemplate: /shopping-lists/{shoppingListUuid}/shopping-list-items
+          uriVariables:
+              shoppingListUuid:
+                  identifiers: [shoppingListUuid]
+          processor: Spryker\Glue\ShoppingListsRestApi\Api\Storefront\Processor\ShoppingListItemsStorefrontProcessor
+          openapiContext:
+              responses:
+                  201:
+                      description: 'Item added to the shopping list.'
+                  400:
+                      description: 'Shopping list id not specified (code 1501) or wrong quantity (code 1507).'
+                  401:
+                      description: 'Missing or invalid access token.'
+                  403:
+                      description: 'Write permission required (code 1505).'
+                  404:
+                      description: 'Shopping list not found (code 1503).'
+                  422:
+                      description: 'Product not found (code 1508), discontinued (code 1510), not active (code 1511), or merchant/offer validation failed (codes 1512–1519).'
+
+        - type: Patch
+          name: updateShoppingListItem
+          description: 'Updates a shopping list item.'
+          uriTemplate: /shopping-lists/{shoppingListUuid}/shopping-list-items/{uuid}
+          read: false
+          uriVariables:
+              shoppingListUuid:
+                  identifiers: [shoppingListUuid]
+              uuid:
+                  identifiers: [uuid]
+          processor: Spryker\Glue\ShoppingListsRestApi\Api\Storefront\Processor\ShoppingListItemsStorefrontProcessor
+          openapiContext:
+              responses:
+                  200:
+                      description: 'Shopping list item updated.'
+                  400:
+                      description: 'Shopping list id not specified (code 1501), item id not specified (code 1502), or wrong quantity (code 1507).'
+                  401:
+                      description: 'Missing or invalid access token.'
+                  403:
+                      description: 'Write permission required (code 1505).'
+                  404:
+                      description: 'Shopping list not found (code 1503) or item not found (code 1504).'
+
+        - type: Delete
+          name: deleteShoppingListItem
+          description: 'Removes an item from a shopping list.'
+          uriTemplate: /shopping-lists/{shoppingListUuid}/shopping-list-items/{uuid}
+          read: false
+          uriVariables:
+              shoppingListUuid:
+                  identifiers: [shoppingListUuid]
+              uuid:
+                  identifiers: [uuid]
+          processor: Spryker\Glue\ShoppingListsRestApi\Api\Storefront\Processor\ShoppingListItemsStorefrontProcessor
+          openapiContext:
+              responses:
+                  204:
+                      description: 'Shopping list item removed.'
+                  400:
+                      description: 'Shopping list id not specified (code 1501) or item id not specified (code 1502).'
+                  401:
+                      description: 'Missing or invalid access token.'
+                  403:
+                      description: 'Write permission required (code 1505).'
+                  404:
+                      description: 'Shopping list not found (code 1503) or item not found (code 1504).'
+
+    includes:
+        - relationshipName: concrete-products
+          targetResource: ConcreteProducts
+          resolverClass: Spryker\Glue\ProductsRestApi\Api\Storefront\Relationship\ConcreteProductsRelationshipResolver
+          uriTemplate: /concrete-products/{sku}
+          uriVariableMappings:
+              sku: sku
+
+    properties:
+        uuid:
+            type: string
+            identifier: true
+            writable: false
+            readable: false
+            description: 'Shopping list item unique identifier.'
+            openapiContext:
+                example: '12345678-1234-1234-1234-123456789012'
+        # Declared as identifier so AP's IRI converter includes it in the compound URI
+        # /shopping-lists/{shoppingListUuid}/shopping-list-items/{uuid}, replicating the nested
+        # self-link that ShoppingListItemRestResponseBuilder::createSelfLinkForShoppingListItem()
+        # built explicitly. The value is set by the provider — not exposed in the response.
+        shoppingListUuid:
+            type: string
+            identifier: true
+            writable: false
+            readable: false
+            description: 'Unique identifier of the parent shopping list.'
+            openapiContext:
+                example: '12345678-1234-1234-1234-123456789012'
+        sku:
+            type: string
+            writable: true
+            readable: true
+            description: 'Product SKU.'
+            openapiContext:
+                example: '123_12345678'
+        quantity:
+            type: integer
+            writable: true
+            readable: true
+            description: 'Quantity of the product in the shopping list.'
+            openapiContext:
+                example: 2

@@ -1,0 +1,23 @@
+post:
+    sku:
+        - NotBlank: ~
+    quantity:
+        - NotBlank: ~
+        - Type:
+              type: integer
+              message: 'This value should be of type integer.'
+        - GreaterThan:
+              value: 0
+        - LessThan:
+              value: 2147483647
+
+patch:
+    quantity:
+        - NotBlank: ~
+        - Type:
+              type: integer
+              message: 'This value should be of type integer.'
+        - GreaterThan:
+              value: 0
+        - LessThan:
+              value: 2147483647
