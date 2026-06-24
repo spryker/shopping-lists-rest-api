@@ -13,6 +13,8 @@ use Spryker\Zed\Kernel\AbstractBundleConfig;
 class ShoppingListsRestApiConfig extends AbstractBundleConfig
 {
     /**
+     * @api
+     *
      * @see \Spryker\Zed\ShoppingList\Business\Model\ShoppingListWriter::DUPLICATE_NAME_SHOPPING_LIST
      *
      * @var string
@@ -20,6 +22,8 @@ class ShoppingListsRestApiConfig extends AbstractBundleConfig
     public const DUPLICATE_NAME_SHOPPING_LIST = 'customer.account.shopping_list.error.duplicate_name';
 
     /**
+     * @api
+     *
      * @see \Spryker\Zed\ShoppingList\Business\Model\ShoppingListWriter::CANNOT_UPDATE_SHOPPING_LIST
      *
      * @var string
@@ -27,6 +31,8 @@ class ShoppingListsRestApiConfig extends AbstractBundleConfig
     public const CANNOT_UPDATE_SHOPPING_LIST = 'customer.account.shopping_list.error.cannot_update';
 
     /**
+     * @api
+     *
      * @see \Spryker\Zed\ShoppingList\Business\Model\ShoppingListWriter::GLOSSARY_KEY_CUSTOMER_ACCOUNT_SHOPPING_LIST_DELETE_FAILED
      *
      * @var string
@@ -34,6 +40,8 @@ class ShoppingListsRestApiConfig extends AbstractBundleConfig
     public const GLOSSARY_KEY_CUSTOMER_ACCOUNT_SHOPPING_LIST_DELETE_FAILED = 'customer.account.shopping_list.delete.failed';
 
     /**
+     * @api
+     *
      * @see \Spryker\Zed\ShoppingList\Business\ShoppingListItem\Validator\ShoppingListItemValidator::ERROR_SHOPPING_LIST_NOT_FOUND
      *
      * @var string
@@ -41,6 +49,8 @@ class ShoppingListsRestApiConfig extends AbstractBundleConfig
     public const ERROR_SHOPPING_LIST_NOT_FOUND = 'customer.account.shopping_list.error.not_found';
 
     /**
+     * @api
+     *
      * @see \Spryker\Zed\ShoppingList\Business\ShoppingListItem\Validator\ShoppingListItemPermissionValidator::ERROR_SHOPPING_LIST_WRITE_PERMISSION_REQUIRED
      *
      * @var string
@@ -48,6 +58,8 @@ class ShoppingListsRestApiConfig extends AbstractBundleConfig
     public const ERROR_SHOPPING_LIST_WRITE_PERMISSION_REQUIRED = 'customer.account.shopping_list.error.write_permission_required';
 
     /**
+     * @api
+     *
      * @see \Spryker\Zed\ShoppingList\Business\ShoppingListItem\Validator\ShoppingListItemValidator::ERROR_SHOPPING_LIST_ITEM_QUANTITY_NOT_VALID
      *
      * @var string
@@ -55,6 +67,8 @@ class ShoppingListsRestApiConfig extends AbstractBundleConfig
     public const ERROR_SHOPPING_LIST_ITEM_QUANTITY_NOT_VALID = 'customer.account.shopping_list_item.error.quantity_not_valid';
 
     /**
+     * @api
+     *
      * @see \Spryker\Zed\ShoppingList\Business\ShoppingListItem\Validator\ShoppingListItemValidator::ERROR_SHOPPING_LIST_ITEM_PRODUCT_NOT_FOUND
      *
      * @var string
@@ -76,6 +90,8 @@ class ShoppingListsRestApiConfig extends AbstractBundleConfig
     protected const ERROR_SHOPPING_LIST_ITEM_PRODUCT_NOT_APPROVED = 'product-approval.message.not-approved';
 
     /**
+     * @api
+     *
      * @see \Spryker\Zed\ProductDiscontinued\Business\ShoppingListCheck\ShoppingListAddItemPreCheck::SHOPPING_LIST_PRE_ADD_CHECK_PRODUCT_DISCONTINUED
      *
      * @var string

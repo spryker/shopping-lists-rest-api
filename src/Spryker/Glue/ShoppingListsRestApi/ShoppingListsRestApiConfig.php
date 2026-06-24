@@ -15,116 +15,162 @@ use Symfony\Component\HttpFoundation\Response;
 class ShoppingListsRestApiConfig extends AbstractBundleConfig
 {
     /**
+     * @api
+     *
      * @var string
      */
     public const RESOURCE_SHOPPING_LISTS = 'shopping-lists';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESOURCE_SHOPPING_LIST_ITEMS = 'shopping-list-items';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_CODE_SHOPPING_LIST_ID_NOT_SPECIFIED = '1501';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_DETAIL_SHOPPING_LIST_ID_NOT_SPECIFIED = 'Shopping list id is not specified.';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_CODE_SHOPPING_LIST_ITEM_ID_NOT_SPECIFIED = '1502';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_DETAIL_SHOPPING_LIST_ITEM_ID_NOT_SPECIFIED = 'Shopping list item id is not specified.';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_CODE_SHOPPING_LIST_NOT_FOUND = '1503';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_DETAIL_SHOPPING_LIST_NOT_FOUND = 'Shopping list not found.';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_CODE_SHOPPING_LIST_ITEM_NOT_FOUND = '1504';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_DETAIL_SHOPPING_LIST_ITEM_NOT_FOUND = 'Shopping list item not found.';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_CODE_SHOPPING_LIST_WRITE_PERMISSION_REQUIRED = '1505';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_DETAIL_SHOPPING_LIST_WRITE_PERMISSION_REQUIRED = 'Requested operation requires write access permission.';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_CODE_SHOPPING_LIST_DUPLICATE_NAME = '1506';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_DETAIL_SHOPPING_LIST_DUPLICATE_NAME = 'Shopping list with given name already exists.';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_CODE_SHOPPING_LIST_WRONG_QUANTITY = '1507';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_DETAIL_SHOPPING_LIST_WRONG_QUANTITY = 'Cannot process quantity of the shopping list item.';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_CODE_SHOPPING_LIST_PRODUCT_NOT_FOUND = '1508';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_DETAIL_SHOPPING_LIST_PRODUCT_NOT_FOUND = 'Concrete product not found.';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_CODE_VALIDATION = '1509';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_CODE_SHOPPING_LIST_PRE_ADD_CHECK_PRODUCT_DISCONTINUED = '1510';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_DETAIL_SHOPPING_LIST_PRE_ADD_CHECK_PRODUCT_DISCONTINUED = 'Product is discontinued';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_CODE_LIST_ITEM_PRODUCT_NOT_ACTIVE = '1511';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESPONSE_DETAIL_LIST_ITEM_PRODUCT_NOT_ACTIVE = 'Product is not active.';
