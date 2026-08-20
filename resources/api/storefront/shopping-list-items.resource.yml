@@ -20,8 +20,6 @@ resource:
               responses:
                   200:
                       description: 'Collection of items for the given shopping list.'
-                  400:
-                      description: 'Shopping list id not specified (code 1501).'
                   401:
                       description: 'Missing or invalid access token.'
                   403:
@@ -67,8 +65,6 @@ resource:
               responses:
                   201:
                       description: 'Item added to the shopping list.'
-                  400:
-                      description: 'Shopping list id not specified (code 1501) or wrong quantity (code 1507).'
                   401:
                       description: 'Missing or invalid access token.'
                   403:
@@ -93,14 +89,14 @@ resource:
               responses:
                   200:
                       description: 'Shopping list item updated.'
-                  400:
-                      description: 'Shopping list id not specified (code 1501), item id not specified (code 1502), or wrong quantity (code 1507).'
                   401:
                       description: 'Missing or invalid access token.'
                   403:
                       description: 'Write permission required (code 1505).'
                   404:
                       description: 'Shopping list not found (code 1503) or item not found (code 1504).'
+                  422:
+                      description: 'Quantity failed validation.'
 
         - type: Delete
           name: deleteShoppingListItem
@@ -117,8 +113,6 @@ resource:
               responses:
                   204:
                       description: 'Shopping list item removed.'
-                  400:
-                      description: 'Shopping list id not specified (code 1501) or item id not specified (code 1502).'
                   401:
                       description: 'Missing or invalid access token.'
                   403:

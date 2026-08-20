@@ -43,8 +43,6 @@ resource:
               responses:
                   201:
                       description: 'Shopping list created.'
-                  400:
-                      description: 'Name not provided (code 1501).'
                   401:
                       description: 'Missing or invalid access token.'
                   403:
@@ -61,8 +59,6 @@ resource:
               responses:
                   200:
                       description: 'Shopping list updated.'
-                  400:
-                      description: 'Shopping list id not specified (code 1501).'
                   401:
                       description: 'Missing or invalid access token.'
                   403:
@@ -80,8 +76,6 @@ resource:
               responses:
                   204:
                       description: 'Shopping list deleted.'
-                  400:
-                      description: 'Shopping list id not specified (code 1501).'
                   401:
                       description: 'Missing or invalid access token.'
                   403:
