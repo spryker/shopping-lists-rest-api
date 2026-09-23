@@ -22,6 +22,9 @@ resource:
                       description: 'Authenticated customer is not a company user.'
 
         - type: Get
+          extraProperties:
+              notFoundCode: '1503'
+              notFoundMessage: 'Shopping list not found.'
           name: getShoppingList
           description: 'Returns a shopping list by UUID.'
           openapiContext:
@@ -69,6 +72,9 @@ resource:
                       description: 'Shopping list with given name already exists (code 1506).'
 
         - type: Delete
+          extraProperties:
+              notFoundCode: '1503'
+              notFoundMessage: 'Shopping list not found.'
           name: deleteShoppingList
           description: 'Deletes a shopping list.'
           processor: Spryker\Glue\ShoppingListsRestApi\Api\Storefront\Processor\ShoppingListsStorefrontProcessor

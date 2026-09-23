@@ -10,6 +10,9 @@ resource:
 
     operations:
         - type: GetCollection
+          extraProperties:
+              notFoundCode: '1503'
+              notFoundMessage: 'Shopping list not found.'
           name: getShoppingListItems
           description: 'Returns shopping list items for a given shopping list.'
           uriTemplate: /shopping-lists/{shoppingListUuid}/shopping-list-items
@@ -34,6 +37,9 @@ resource:
         # built this URL explicitly; here AP's IRI converter derives it automatically once
         # shoppingListUuid is declared as an identifier and populated by the provider.
         - type: Get
+          extraProperties:
+              notFoundCode: '1503'
+              notFoundMessage: 'Shopping list not found.'
           name: getShoppingListItem
           description: 'Returns a single shopping list item by UUID.'
           uriTemplate: /shopping-lists/{shoppingListUuid}/shopping-list-items/{uuid}
@@ -99,6 +105,9 @@ resource:
                       description: 'Quantity failed validation.'
 
         - type: Delete
+          extraProperties:
+              notFoundCode: '1503'
+              notFoundMessage: 'Shopping list not found.'
           name: deleteShoppingListItem
           description: 'Removes an item from a shopping list.'
           uriTemplate: /shopping-lists/{shoppingListUuid}/shopping-list-items/{uuid}
